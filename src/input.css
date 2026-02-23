@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 58px;
+  color: black;
+}
+
+h4 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 42px;
+  color: black;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #333333;
+}
+
+.primary-btn {
+  padding: 16px 32px;
+  background-color: black;
+  border-radius: 45px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: auto;
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-[1200px] mx-auto;
+  }
+}
+
+/* Infinite marquee animation */
+.infinite-track {
+  display: flex;
+  width: max-content;
+  animation: infiniteScroll 20s linear infinite;
+  will-change: transform;
+}
+
+.infinite-track img {
+  flex-shrink: 0;
+}
+
+@keyframes infiniteScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* accordion  */
+.accordion-content {
+  transition:
+    max-height 0.3s ease-out,
+    padding 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
